@@ -4,8 +4,6 @@ import { Link } from 'react-router';
 
 const ContainerHtml = styled.div`
     background-color: white;
-    min-height: 100vh;
-    width: 100vw;
     color: black;
     padding: 20px;
 `;

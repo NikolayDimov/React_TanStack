@@ -5,10 +5,8 @@ import { Link } from 'react-router';
 
 const ContainerCss = styled.div`
     background-color: white;
-    min-height: 100vh;
-    width: 100vw;
     color: black;
-    padding-top: 20px;
+    padding: 20px;
 `;
 
 const BackButton = styled(Link)`

@@ -9,9 +9,8 @@ interface ContainerProps {
 const Container = styled.div<ContainerProps>`
     background-color: ${(props) =>
         props.isTaskPage ? "white" : "transparent"};
-    min-height: 100vh;
-    width: 100vw;
     padding: 20px;
+    padding-top: 60px;
     color: black;
     text-align: center;
 `;
@@ -19,7 +18,8 @@ const Container = styled.div<ContainerProps>`
 const ButtonContainer = styled.div`
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    margin-top: 20px;
     margin-bottom: 20px;
     position: relative;
     z-index: 1; /* Makes sure buttons stay above video */
