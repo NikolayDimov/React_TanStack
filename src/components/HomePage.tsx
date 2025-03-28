@@ -2,9 +2,6 @@ import styled from "styled-components";
 import { Link, useLocation } from "react-router";
 import { routes } from "../static/routes";
 import BackgroundVideo from "./BackgroundVideo";
-
-
-
 interface ContainerProps {
     isTaskPage: boolean;
 }
@@ -17,7 +14,6 @@ const Container = styled.div<ContainerProps>`
     padding: 20px;
     color: black;
     text-align: center;
-
 `;
 
 const ButtonContainer = styled.div`
@@ -47,12 +43,6 @@ const StyledButton = styled(Link)`
         transform: translateY(-2px);
     }
 `;
-
-
-
-
-
-
 
 function HomePage() {
     const location = useLocation();
