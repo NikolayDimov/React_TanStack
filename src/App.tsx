@@ -13,7 +13,6 @@ const Container = styled.div`
 
 function App() {
   return (
-
     <Container>
       <h1>Smartico - Frontend Tasks</h1>
       <hr />

@@ -66,6 +66,12 @@ const Button = styled.button`
   }
 `;
 
+const PageNums = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
 interface Post {
     id: number;
     title: string;
@@ -100,7 +106,7 @@ export const ReactTask = () => {
     });
 
     const posts = data?.posts || [];
-    const totalPages = data?.total || 0;
+    const totalPages = data?.total ? Math.ceil(data.total / limit) : 0;
     console.log('totalPages', totalPages)
 
     if (error instanceof Error) return <ErrorMessage>{error.message}</ErrorMessage>;
@@ -130,13 +136,15 @@ export const ReactTask = () => {
                 </tbody>
             </Table>
 
-            {/* ToDO -> show pages 1/251     12/251 */}
+            <PageNums>
+                Page {page + 1} / {totalPages}
+            </PageNums>
 
             <PaginationControls>
                 <Button onClick={handlePreviousPage} disabled={page === 0}>
                     Previous
                 </Button>
-                <Button onClick={handleNextPage}>
+                <Button onClick={handleNextPage} disabled={page + 1 >= totalPages}>
                     Next
                 </Button>
             </PaginationControls>
