@@ -7,7 +7,7 @@ const ContainerHtml = styled.div`
     min-height: 100vh;
     width: 100vw;
     color: black;
-    padding-top: 20px;
+    padding: 20px;
 `;
 
 const Wrapper = styled.div`
