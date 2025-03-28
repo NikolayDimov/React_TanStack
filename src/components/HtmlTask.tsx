@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import timetable from '../assets/timetable.png';
+import { Link } from 'react-router';
 
 const ContainerHtml = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
     background-color: white;
     min-height: 100vh;
     width: 100vw;
     color: black;
-    padding: 20px;
+    padding-top: 20px;
 `;
 
 const Table = styled.table`
@@ -33,6 +38,7 @@ const Td = styled.td`
 
 const Tr = styled.tr`
     border: 2px solid black;
+    text-align: left;
 `;
 
 const TrMain = styled.tr`
@@ -43,6 +49,31 @@ const TrMain = styled.tr`
 const LunchRow = styled.tr`
     font-weight: bold;
     text-align: center;
+`;
+
+const BackButton = styled(Link)`
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid #007bff;
+    margin-top: 30px;
+    display: inline-block;
+
+    &:hover {
+        background-color: #007bff;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        background-color: #0056b3;
+        color: white;
+    }
 `;
 
 export const HtmlTask = () => {
@@ -99,6 +130,7 @@ export const HtmlTask = () => {
                     </Tr>
                 </tbody>
             </Table>
+            <BackButton to="/">Back to Home</BackButton>
         </ContainerHtml>
     );
 };

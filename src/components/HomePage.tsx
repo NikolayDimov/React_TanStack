@@ -44,6 +44,8 @@ const StyledButton = styled(Link)`
     }
 `;
 
+
+
 function HomePage() {
     const location = useLocation();
     const isTaskPage = [routes.htmlTaks, routes.cssTask, routes.reactTask].includes(location.pathname);
