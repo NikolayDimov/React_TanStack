@@ -135,7 +135,7 @@ const PageNums = styled.div`
 `;
 
 const BackButton = styled(Link)`
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #f1f1f1;
     color: #007bff;
     text-decoration: none;
@@ -144,7 +144,6 @@ const BackButton = styled(Link)`
     font-weight: bold;
     transition: all 0.3s ease;
     border: 2px solid #007bff;
-    margin-top: 30px;
     display: inline-block;
 
     &:hover {
@@ -198,13 +197,27 @@ export const ReactTask = () => {
 
     if (error instanceof Error) return <ErrorMessage>{error.message}</ErrorMessage>;
 
-    const handleNextPage = () => setPage((prevPage) => prevPage + 1);
-    const handlePreviousPage = () => setPage((prevPage) => Math.max(prevPage - 1, 0));
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    const handleNextPage = () => {
+        setPage((prevPage) => prevPage + 1);
+        scrollToTop();
+    };
+
+    const handlePreviousPage = () => {
+        setPage((prevPage) => Math.max(prevPage - 1, 0));
+        scrollToTop();
+    };
 
     return (
         <Container $isPlaceholderData={isPlaceholderData} id='container'>
             {isPlaceholderData && <Loader />}
-
+            <BackButton to="/">Back to Home</BackButton>
             <Title>React Task: Display Posts</Title>
             <TableWrapper>
                 <Table>
@@ -239,7 +252,6 @@ export const ReactTask = () => {
                     Next
                 </Button>
             </PaginationControls>
-            <BackButton to="/">Back to Home</BackButton>
         </Container>
     );
 };

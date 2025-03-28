@@ -3,15 +3,36 @@ import timetable from '../assets/timetable.png';
 import { Link } from 'react-router';
 
 const ContainerHtml = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center; 
     background-color: white;
     min-height: 100vh;
     width: 100vw;
     color: black;
     padding-top: 20px;
+`;
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+`;
+
+const CenteredContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+`;
+
+const Title = styled.h2`
+    margin-bottom: 20px
+`;
+
+const Content = styled.div`
+    margin-bottom: 20px
 `;
 
 const Table = styled.table`
@@ -29,7 +50,7 @@ const Th = styled.th`
 const ThHours = styled.th`
     border: 2px solid black;
     text-align: center;
-    font-weight: normal
+    font-weight: normal;
 `;
 
 const Td = styled.td`
@@ -52,7 +73,7 @@ const LunchRow = styled.tr`
 `;
 
 const BackButton = styled(Link)`
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #f1f1f1;
     color: #007bff;
     text-decoration: none;
@@ -61,7 +82,6 @@ const BackButton = styled(Link)`
     font-weight: bold;
     transition: all 0.3s ease;
     border: 2px solid #007bff;
-    margin-top: 30px;
     display: inline-block;
 
     &:hover {
@@ -79,58 +99,62 @@ const BackButton = styled(Link)`
 export const HtmlTask = () => {
     return (
         <ContainerHtml>
-            <h2>This is the HTML task. (10-15 min)</h2>
-            <p>Build a table according to the design provided in the image. (only HTML)</p>
-            <img src={timetable} width={300} alt="Timetable Design" />
-
-            <Table>
-                <thead>
-                    <Tr>
-                        <Th colSpan={6}>Time Table</Th>
-                    </Tr>
-                </thead>
-                <tbody>
-                    <TrMain>
-                        <ThHours rowSpan={6}>Hours</ThHours>
-                        <Th>mon</Th>
-                        <Th>tues</Th>
-                        <Th>Wed</Th>
-                        <Th>Thrus</Th>
-                        <Th>Fri</Th>
-                    </TrMain>
-                    <Tr>
-                        <Td>Science</Td>
-                        <Td>Maths</Td>
-                        <Td>Science</Td>
-                        <Td>Maths</Td>
-                        <Td>Arts</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>Science</Td>
-                        <Td>Maths</Td>
-                        <Td>Science</Td>
-                        <Td>Maths</Td>
-                        <Td>Arts</Td>
-                    </Tr>
-                    <LunchRow>
-                        <Td colSpan={5}>Lunch</Td>
-                    </LunchRow>
-                    <Tr>
-                        <Td>Science</Td>
-                        <Td>Maths</Td>
-                        <Td>Science</Td>
-                        <Td>Maths</Td>
-                        <Td rowSpan={2}>Project</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>Science</Td>
-                        <Td>Maths</Td>
-                        <Td>Science</Td>
-                        <Td>Maths</Td>
-                    </Tr>
-                </tbody>
-            </Table>
             <BackButton to="/">Back to Home</BackButton>
+            <CenteredContent>
+                <Title>This is the HTML task. (10-15 min)</Title>
+                <Content>Build a table according to the design provided in the image. (only HTML)</Content>
+                <img src={timetable} width={300} alt="Timetable Design" />
+            </CenteredContent>
+
+            <Wrapper>
+                <Table>
+                    <thead>
+                        <Tr>
+                            <Th colSpan={6}>Time Table</Th>
+                        </Tr>
+                    </thead>
+                    <tbody>
+                        <TrMain>
+                            <ThHours rowSpan={6}>Hours</ThHours>
+                            <Th>mon</Th>
+                            <Th>tues</Th>
+                            <Th>Wed</Th>
+                            <Th>Thrus</Th>
+                            <Th>Fri</Th>
+                        </TrMain>
+                        <Tr>
+                            <Td>Science</Td>
+                            <Td>Maths</Td>
+                            <Td>Science</Td>
+                            <Td>Maths</Td>
+                            <Td>Arts</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>Science</Td>
+                            <Td>Maths</Td>
+                            <Td>Science</Td>
+                            <Td>Maths</Td>
+                            <Td>Arts</Td>
+                        </Tr>
+                        <LunchRow>
+                            <Td colSpan={5}>Lunch</Td>
+                        </LunchRow>
+                        <Tr>
+                            <Td>Science</Td>
+                            <Td>Maths</Td>
+                            <Td>Science</Td>
+                            <Td>Maths</Td>
+                            <Td rowSpan={2}>Project</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>Science</Td>
+                            <Td>Maths</Td>
+                            <Td>Science</Td>
+                            <Td>Maths</Td>
+                        </Tr>
+                    </tbody>
+                </Table>
+            </Wrapper>
         </ContainerHtml>
     );
 };
