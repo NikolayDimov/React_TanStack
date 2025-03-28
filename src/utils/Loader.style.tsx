@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 const StyledLoader = styled.div`
-    width: 48px;
-    height: 48px;
-    border: 5px solid #FFF;
-    border-bottom-color: #FF3D00;
+    width: 72px;
+    height: 72px;
+    border: 6px solid #FFF;
+    border-bottom-color: #007bff;
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
