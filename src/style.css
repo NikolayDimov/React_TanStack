@@ -1,0 +1,11 @@
+.main {
+    width: 5rem;
+    height: 5rem;
+    background-color: #62374e;
+}
+
+.square {
+    width: 4rem;
+    height: 4rem;
+    background-color: #fdc57b;
+}
