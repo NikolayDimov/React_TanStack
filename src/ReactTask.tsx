@@ -1,5 +1,5 @@
 import { HTMLAttributes, useEffect, useRef, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 import Loader from './utils/Loader';
 
@@ -38,13 +38,13 @@ const PaginationControls = styled.div`
 `;
 
 interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
-    isLoading: boolean;
+    isPlaceholderData: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
     position: relative;
-    opacity: ${props => props.isLoading ? 0.6 : 1};
-    pointer-events: ${props => props.isLoading ? 'none' : 'auto'};
+    opacity: ${props => props.isPlaceholderData ? 0.6 : 1};
+    pointer-events: ${props => props.isPlaceholderData ? 'none' : 'auto'};
     & > .loader {
         position: absolute;
         top: 50%;
@@ -91,19 +91,13 @@ const fetchPosts = async (skip: number, limit: number): Promise<PostResponse> =>
 export const ReactTask = () => {
     const [page, setPage] = useState(0);
     const limit = 10;
-    const currentPostsRef = useRef<PostResponse | null>(null);
 
-    const { data, error, isLoading } = useQuery({
+    const { data, error, isPlaceholderData } = useQuery({
         queryKey: ['posts', page],
         queryFn: () => fetchPosts(page * limit, limit),
+        placeholderData: keepPreviousData,
         retry: 2,
     });
-
-    useEffect(() => {
-        if (data) {
-            currentPostsRef.current = data;
-        }
-    }, [data]);
 
     const posts = data?.posts || [];
     const totalPages = data?.total || 0;
@@ -113,11 +107,10 @@ export const ReactTask = () => {
 
     const handleNextPage = () => setPage((prevPage) => prevPage + 1);
     const handlePreviousPage = () => setPage((prevPage) => Math.max(prevPage - 1, 0));
-    const displayPost = posts.length ? posts : currentPostsRef.current?.posts || [];
 
     return (
-        <Container isLoading={isLoading} id='container'>
-            {isLoading && <Loader />}
+        <Container isPlaceholderData={isPlaceholderData} id='container'>
+            {isPlaceholderData && <Loader />}
 
             <h2>React Task: Display Posts</h2>
             <Table>
@@ -128,7 +121,7 @@ export const ReactTask = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {displayPost?.map((post) => (
+                    {posts?.map((post) => (
                         <Tr key={post.id}>
                             <Td>{post.title}</Td>
                             <Td>{post.body}</Td>
