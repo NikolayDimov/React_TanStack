@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 interface UseFilterProps<T> {
     items: T[];
-    initialItems?: T[];
-    searchQuery?: string;
 }
 
 interface UseFilterResult<T> {
@@ -11,32 +9,30 @@ interface UseFilterResult<T> {
     setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const useFilter = <T>({ items, initialItems }: UseFilterProps<T>): UseFilterResult<T> => {
+const useFilter = <T>({ items }: UseFilterProps<T>): UseFilterResult<T> => {
     const [searchQuery, setSearchQuery] = useState<string>("");
-    const [debouncedQuery, setDebouncedQuery] = useState<string>(searchQuery);
-    const [filteredItems, setFilteredItems] = useState<T[]>(initialItems || items);
 
-    // Debounce effect
-    useEffect(() => {
-        const handler = setTimeout(() => {
-            setDebouncedQuery(searchQuery);
-        }, 800);
+    const debouncedQuery = useDebounce(searchQuery, 800);
 
-        return () => clearTimeout(handler);
-    }, [searchQuery]);
-
-
-    useEffect(() => {
-        const filterItems = () => {
-            const filtered = items.filter((item) =>
-                JSON.stringify(item).toLowerCase().includes(debouncedQuery.toLowerCase()));
-            setFilteredItems(filtered);
-        };
-
-        filterItems();
+    const filteredItems = useMemo(() => {
+        return items.filter((item) =>
+            JSON.stringify(item).toLowerCase().includes(debouncedQuery.toLowerCase())
+        );
     }, [items, debouncedQuery]);
 
     return { filteredItems, setSearchQuery };
+};
+
+// Debounce Hook to avoid excessive re-renders
+const useDebounce = (value: string, delay: number) => {
+    const [debouncedValue, setDebouncedValue] = useState(value);
+
+    useEffect(() => {
+        const handler = setTimeout(() => setDebouncedValue(value), delay);
+        return () => clearTimeout(handler);
+    }, [value, delay]);
+
+    return debouncedValue;
 };
 
 export default useFilter;
