@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 import { routes } from "../../static/routes";
 import BackgroundVideo from "../BackgroundVideo/BackgroundVideo";
-import { ButtonContainer, Container, StyledButton } from "./HomePage.style";
+import { ButtonContainer, Container, StyledButton, Title } from "./HomePage.style";
 
 const HomePage: React.FC = () => {
     const location = useLocation();
@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
     return (
         <Container $isTaskPage={isTaskPage}>
             {!isTaskPage && <BackgroundVideo />}
-            <h1>Smartico - Frontend Tasks</h1>
+            <Title>Smartico - Frontend Tasks</Title>
             <ButtonContainer>
                 <StyledButton to={routes.home}>Home</StyledButton>
                 <StyledButton to={routes.htmlTaks}>HTML Task</StyledButton>

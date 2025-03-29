@@ -3,7 +3,7 @@ import "./style.css";
 import { BackButton } from "../../utils/BackButton";
 
 export const ContainerCss = styled.div`
-    background-color: white;
+    background-color: #EEEEEE;
     color: black;
     padding: 1.25rem;
     width: 87.5rem;

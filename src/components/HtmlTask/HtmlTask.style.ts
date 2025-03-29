@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BackButton } from "../../utils/BackButton";
 
 export const ContainerHtml = styled.div`
-    background-color: white;
+    background-color: #EEEEEE;
     color: black;
     padding: 1.25rem;
     width: 87.5rem;

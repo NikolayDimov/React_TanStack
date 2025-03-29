@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ContainerProps } from './ReactTask.static';
 
 export const Title = styled.h2`
-    margin: 2.5rem 0 1.25rem 0;
+    margin: 1.5rem 0 1.25rem 0;
     text-align: center;
     font-size: 2rem; 
     color: #333;
@@ -82,6 +82,7 @@ export const PaginationControls = styled.div`
 `;
 
 export const Container = styled.div<ContainerProps>`
+hight: 100vh;
     position: relative;
     background-color: #EEEEEE;
     color: black;
