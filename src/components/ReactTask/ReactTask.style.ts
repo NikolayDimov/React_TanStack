@@ -87,8 +87,8 @@ export const Container = styled.div<ContainerProps>`
     background-color: white;
     color: black;
     padding: 1.25rem;
-    opacity: ${props => props.$isPlaceholderData ? 0.6 : 1};
-    pointer-events: ${props => props.$isPlaceholderData ? 'none' : 'auto'};
+    opacity: ${props => props.$isFetching ? 0.6 : 1};
+    pointer-events: ${props => props.$isFetching ? 'none' : 'auto'};
 
     & > .loader {
         position: absolute;

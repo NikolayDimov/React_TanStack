@@ -13,5 +13,5 @@ export interface PostResponse {
 }
 
 export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
-    $isPlaceholderData: boolean;
+    $isFetching: boolean;
 }

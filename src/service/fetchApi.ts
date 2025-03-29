@@ -7,6 +7,5 @@ export const fetchPosts = async (skip: number, limit: number): Promise<PostRespo
         throw new Error('Failed to fetch posts');
     }
     const data = await response.json();
-    console.log('data', data)
     return data;
 };

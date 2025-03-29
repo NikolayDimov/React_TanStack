@@ -11,7 +11,7 @@ const ReactTask: React.FC = () => {
     const [page, setPage] = useState(0);
     const limit = 10;
 
-    const { data, error, isPlaceholderData } = useQuery<PostResponse, Error>({
+    const { data, error, isLoading, isFetching } = useQuery<PostResponse, Error>({
         queryKey: ['posts', page],
         queryFn: () => fetchPosts(page * limit, limit),
         placeholderData: keepPreviousData,
@@ -27,7 +27,6 @@ const ReactTask: React.FC = () => {
 
     const posts = data?.posts || [];
     const totalPages = data?.total ? Math.ceil(data.total / limit) : 0;
-    console.log('totalPages', totalPages)
 
     if (error instanceof Error) {
         return <ErrorMessage>{error.message}</ErrorMessage>;
@@ -51,8 +50,9 @@ const ReactTask: React.FC = () => {
     };
 
     return (
-        <Container $isPlaceholderData={isPlaceholderData} id='container'>
-            {isPlaceholderData && <Loader />}
+        <Container $isFetching={isFetching} id='container'>
+            {(isLoading || isFetching) && <Loader />}
+
             <BackButton to="/">Back to Home</BackButton>
             <Title>React Task: Display Posts</Title>
             <TableWrapper>

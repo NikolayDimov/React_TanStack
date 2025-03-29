@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
     const isTaskPage = [routes.htmlTaks, routes.cssTask, routes.reactTask].includes(location.pathname);
 
     return (
-        <Container isTaskPage={isTaskPage}>
+        <Container $isTaskPage={isTaskPage}>
             {!isTaskPage && <BackgroundVideo />}
             <h1>Smartico - Frontend Tasks</h1>
             <ButtonContainer>

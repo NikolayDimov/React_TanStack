@@ -4,7 +4,7 @@ import { ContainerProps } from "./HomePage.static";
 
 export const Container = styled.div<ContainerProps>`
     background-color: ${(props) =>
-        props.isTaskPage ? "white" : "transparent"};
+        props.$isTaskPage ? "white" : "transparent"};
     padding: 1.25rem;
     padding-top: 3.75rem;
     color: black;

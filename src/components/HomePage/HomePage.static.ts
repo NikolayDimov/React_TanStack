@@ -1,3 +1,3 @@
 export interface ContainerProps {
-    isTaskPage: boolean;
+    $isTaskPage: boolean;
 }
