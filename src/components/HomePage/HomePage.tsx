@@ -16,6 +16,7 @@ const HomePage: React.FC = () => {
                 <StyledButton to={routes.htmlTaks}>HTML Task</StyledButton>
                 <StyledButton to={routes.cssTask}>CSS Task</StyledButton>
                 <StyledButton to={routes.reactTask}>React Task</StyledButton>
+                <StyledButton to={routes.advancedReactTask}>Advanced React Task</StyledButton>
             </ButtonContainer>
 
         </Container>
