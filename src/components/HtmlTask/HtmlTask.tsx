@@ -15,7 +15,7 @@ const HtmlTask: React.FC = () => {
             <ContainerHtml>
                 <BackButton to="/">Back to Home</BackButton>
                 <CenteredContent>
-                    <Title>This is the HTML task. (10-15 min)</Title>
+                    <Title>This is the HTML task</Title>
                     <Content>Build a table according to the design provided in the image. (only HTML)</Content>
                     <img src={timetable} width={300} alt="Timetable Design" />
                 </CenteredContent>

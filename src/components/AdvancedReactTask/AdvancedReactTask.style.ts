@@ -2,11 +2,20 @@ import styled from 'styled-components';
 import { ContainerProps } from './AdvancedReactTask.static';
 
 export const Title = styled.h2`
-    margin: 2.5rem 0 1.25rem 0;
+    margin: 2.5rem 0 2.25rem 0;
     text-align: center;
-    font-size: 2rem; 
-    color: #333;
-    font-weight: 600;
+    font-size: 3rem; 
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    
+    @media (max-width: 800px) {
+        font-size: 2.5rem;
+    }
 `;
 
 export const TableWrapper = styled.div`

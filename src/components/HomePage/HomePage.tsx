@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
     return (
         <Container $isTaskPage={isTaskPage}>
             {!isTaskPage && <BackgroundVideo />}
-            <Title>Smartico - Frontend Tasks</Title>
+            <Title>Frontend Tasks</Title>
             <ButtonContainer>
                 <StyledButton to={routes.home}>Home</StyledButton>
                 <StyledButton to={routes.htmlTaks}>HTML Task</StyledButton>

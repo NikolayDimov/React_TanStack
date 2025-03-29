@@ -2,7 +2,7 @@ import csstest from '../../assets/csstest.png';
 import { BackButton } from '../../utils/BackButton';
 import BackgroundVideo from '../BackgroundVideo/BackgroundVideo';
 import { BackgroundWrapper } from '../BackgroundVideo/BackgroundVideo.style';
-import { ContainerCss, CenteredContent, Container, Square, TaskTitle, TaskDescription, TaskImage } from './CssTask.style';
+import { ContainerCss, CenteredContent, Container, Square, TaskDescription, TaskImage, Title } from './CssTask.style';
 
 const CssTask: React.FC = () => {
     return (
@@ -13,7 +13,7 @@ const CssTask: React.FC = () => {
             <ContainerCss>
                 <BackButton to="/">Back to Home</BackButton>
                 <CenteredContent>
-                    <TaskTitle>This is the CSS task. (5-10 min)</TaskTitle>
+                    <Title>This is the CSS task</Title>
                     <TaskDescription>Build the layout shown in the image below using HTML and CSS.</TaskDescription>
                     <TaskImage src={csstest} alt="CSS task layout" /> {/* Using styled component for image */}
 

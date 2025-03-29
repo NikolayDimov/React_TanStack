@@ -34,11 +34,23 @@ export const CenteredContent = styled.div`
     margin-bottom: 2.5rem;
 `;
 
-export const TaskTitle = styled.h2`
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+export const Title = styled.h2`
+    margin: 2.5rem 0 2.25rem 0;
+    text-align: center;
+    font-size: 3rem; 
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    
+    @media (max-width: 800px) {
+        font-size: 2.5rem;
+    }
 `;
+
 
 export const TaskDescription = styled.p`
     font-size: 1.125rem;
