@@ -1,36 +1,37 @@
 import { useState } from 'react';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import Loader from '../../utils/Loader';
-import { BackButton, Button, Container, ErrorMessage, PageNums, PaginationControls, Table, TableWrapper, Td, Th, Title, Tr } from './ReactTask.style';
+import { Button, Container, ErrorMessage, PageNums, PaginationControls, Table, TableWrapper, Td, Th, Title, Tr } from './ReactTask.style';
 import { PostResponse } from './ReactTask.static';
+import { fetchPosts } from '../../service/fetchApi';
+import { BackButton } from '../../utils/BackButton';
 
 
-const fetchPosts = async (skip: number, limit: number): Promise<PostResponse> => {
-    const response = await fetch(`https://dummyjson.com/posts?limit=${limit}&skip=${skip}`);
-    if (!response.ok) {
-        throw new Error('Failed to fetch posts');
-    }
-    const data = await response.json();
-    console.log('data', data)
-    return data;
-};
-
-export const ReactTask = () => {
+const ReactTask: React.FC = () => {
     const [page, setPage] = useState(0);
     const limit = 10;
 
-    const { data, error, isPlaceholderData } = useQuery({
+    const { data, error, isPlaceholderData } = useQuery<PostResponse, Error>({
         queryKey: ['posts', page],
         queryFn: () => fetchPosts(page * limit, limit),
         placeholderData: keepPreviousData,
         retry: 2,
+        // refetchInterval: 5000,
+        staleTime: 5000,
+        // stale query are refetched automatically in the background when
+        // - the new instance of query is mounted
+        // - window is refocudes
+        // - network reconnected
+        // - query has option to refetch interval
     });
 
     const posts = data?.posts || [];
     const totalPages = data?.total ? Math.ceil(data.total / limit) : 0;
     console.log('totalPages', totalPages)
 
-    if (error instanceof Error) return <ErrorMessage>{error.message}</ErrorMessage>;
+    if (error instanceof Error) {
+        return <ErrorMessage>{error.message}</ErrorMessage>;
+    }
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -90,3 +91,6 @@ export const ReactTask = () => {
         </Container>
     );
 };
+
+
+export default ReactTask;

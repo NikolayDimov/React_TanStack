@@ -3,7 +3,7 @@ import { routes } from "../../static/routes";
 import BackgroundVideo from "../BackgroundVideo/BackgroundVideo";
 import { ButtonContainer, Container, StyledButton } from "./HomePage.style";
 
-function HomePage() {
+const HomePage: React.FC = () => {
     const location = useLocation();
     const isTaskPage = [routes.htmlTaks, routes.cssTask, routes.reactTask].includes(location.pathname);
 

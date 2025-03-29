@@ -1,11 +1,12 @@
 
 import timetable from '../../assets/timetable.png';
 import BackgroundVideo from '../BackgroundVideo/BackgroundVideo';
-import { ContainerHtml, BackButton, CenteredContent, Title, Content, Wrapper, Table, Tr, Th, TrMain, ThHours, Td, LunchRow } from './HtmlTask.style';
+import { ContainerHtml, CenteredContent, Title, Content, Wrapper, Table, Tr, Th, TrMain, ThHours, Td, LunchRow } from './HtmlTask.style';
 import { BackgroundWrapper } from '../BackgroundVideo/BackgroundVideo.style';
+import { BackButton } from '../../utils/BackButton';
 
 
-export const HtmlTask = () => {
+const HtmlTask: React.FC = () => {
     return (
         <>
             <BackgroundWrapper>
@@ -72,3 +73,6 @@ export const HtmlTask = () => {
         </>
     );
 };
+
+
+export default HtmlTask;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import "./style.css";
-import { Link } from "react-router";
 
 export const ContainerCss = styled.div`
     background-color: white;
@@ -13,31 +12,6 @@ export const ContainerCss = styled.div`
     z-index: 2;
 `;
 
-export const BackButton = styled(Link)`
-    padding: 0.625rem 1.25rem;
-    background-color: #f1f1f1;
-    color: #007bff;
-    text-decoration: none;
-    border-radius: 0.3125rem;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border: 0.125rem solid #007bff;
-    margin-top: 1.875rem;
-    display: inline-block;
-
-    &:hover {
-        background-color: #007bff;
-        color: white;
-        transform: translateY(-0.125rem);
-    }
-
-    &:active {
-        background-color: #0056b3;
-        color: white;
-    }
-`;
-
 export const CenteredContent = styled.div`
     display: flex;
     flex-direction: column;
@@ -46,6 +20,22 @@ export const CenteredContent = styled.div`
     text-align: center;
     width: 100%;
     margin-bottom: 2.5rem;
+`;
+
+export const TaskTitle = styled.h2`
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+`;
+
+export const TaskDescription = styled.p`
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+`;
+
+export const TaskImage = styled.img`
+    width: 300px;
+    margin-bottom: 2rem;
 `;
 
 export const Container = styled.div`

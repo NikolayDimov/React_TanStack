@@ -1,9 +1,10 @@
 import csstest from '../../assets/csstest.png';
+import { BackButton } from '../../utils/BackButton';
 import BackgroundVideo from '../BackgroundVideo/BackgroundVideo';
 import { BackgroundWrapper } from '../BackgroundVideo/BackgroundVideo.style';
-import { ContainerCss, BackButton, CenteredContent, Container, Square } from './CssTask.style';
+import { ContainerCss, CenteredContent, Container, Square, TaskTitle, TaskDescription, TaskImage } from './CssTask.style';
 
-export const CssTask = () => {
+const CssTask: React.FC = () => {
     return (
         <>
             <BackgroundWrapper>
@@ -12,21 +13,9 @@ export const CssTask = () => {
             <ContainerCss>
                 <BackButton to="/">Back to Home</BackButton>
                 <CenteredContent>
-                    <h2>This is the CSS task. (5-10 min)</h2>
-                    <p>Build the layout shown in the image below using HTML and CSS.</p>
-                    <img src={csstest} width={300} />
-
-                    <div >
-
-                    </div>
-
-                    <div className="main">
-                        <div className="square"></div>
-                    </div>
-
-                    <div >
-
-                    </div>
+                    <TaskTitle>This is the CSS task. (5-10 min)</TaskTitle>
+                    <TaskDescription>Build the layout shown in the image below using HTML and CSS.</TaskDescription>
+                    <TaskImage src={csstest} alt="CSS task layout" /> {/* Using styled component for image */}
 
                     <Container>
                         <Square className="top-left" />
@@ -34,10 +23,11 @@ export const CssTask = () => {
                         <Square className="bottom-left" />
                         <Square className="bottom-right" />
                     </Container>
-
                 </CenteredContent>
-
             </ContainerCss>
         </>
     );
 };
+
+
+export default CssTask;
