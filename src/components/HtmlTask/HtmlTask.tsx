@@ -5,7 +5,6 @@ import { ContainerHtml, BackButton, CenteredContent, Title, Content, Wrapper, Ta
 import { BackgroundWrapper } from '../BackgroundVideo/BackgroundVideo.style';
 
 
-
 export const HtmlTask = () => {
     return (
         <>

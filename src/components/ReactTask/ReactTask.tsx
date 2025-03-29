@@ -2,20 +2,8 @@ import { useState } from 'react';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import Loader from '../../utils/Loader';
 import { BackButton, Button, Container, ErrorMessage, PageNums, PaginationControls, Table, TableWrapper, Td, Th, Title, Tr } from './ReactTask.style';
+import { PostResponse } from './ReactTask.static';
 
-
-
-interface Post {
-    id: number;
-    title: string;
-    body: string;
-    views: number;
-}
-
-interface PostResponse {
-    posts: Post[];
-    total: number;
-}
 
 const fetchPosts = async (skip: number, limit: number): Promise<PostResponse> => {
     const response = await fetch(`https://dummyjson.com/posts?limit=${limit}&skip=${skip}`);

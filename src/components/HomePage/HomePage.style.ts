@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router";
-
-interface ContainerProps {
-    isTaskPage: boolean;
-}
+import { ContainerProps } from "./HomePage.static";
 
 export const Container = styled.div<ContainerProps>`
     background-color: ${(props) =>

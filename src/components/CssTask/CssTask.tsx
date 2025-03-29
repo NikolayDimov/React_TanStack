@@ -3,8 +3,6 @@ import BackgroundVideo from '../BackgroundVideo/BackgroundVideo';
 import { BackgroundWrapper } from '../BackgroundVideo/BackgroundVideo.style';
 import { ContainerCss, BackButton, CenteredContent } from './CssTask.style';
 
-
-
 export const CssTask = () => {
     return (
         <>
