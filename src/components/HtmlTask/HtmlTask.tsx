@@ -18,57 +18,58 @@ const HtmlTask: React.FC = () => {
                     <Title>This is the HTML task</Title>
                     <Content>Build a table according to the design provided in the image. (only HTML)</Content>
                     <img src={timetable} width={300} alt="Timetable Design" />
-                </CenteredContent>
 
-                <Wrapper>
-                    <Table>
-                        <thead>
-                            <Tr>
-                                <Th colSpan={6}>Time Table</Th>
-                            </Tr>
-                        </thead>
-                        <tbody>
-                            <TrMain>
-                                <ThHours rowSpan={6}>Hours</ThHours>
-                                <Th>mon</Th>
-                                <Th>tues</Th>
-                                <Th>Wed</Th>
-                                <Th>Thrus</Th>
-                                <Th>Fri</Th>
-                            </TrMain>
-                            <Tr>
-                                <Td>Science</Td>
-                                <Td>Maths</Td>
-                                <Td>Science</Td>
-                                <Td>Maths</Td>
-                                <Td>Arts</Td>
-                            </Tr>
-                            <Tr>
-                                <Td>Science</Td>
-                                <Td>Maths</Td>
-                                <Td>Science</Td>
-                                <Td>Maths</Td>
-                                <Td>Arts</Td>
-                            </Tr>
-                            <LunchRow>
-                                <Td colSpan={5}>Lunch</Td>
-                            </LunchRow>
-                            <Tr>
-                                <Td>Science</Td>
-                                <Td>Maths</Td>
-                                <Td>Science</Td>
-                                <Td>Maths</Td>
-                                <Td rowSpan={2}>Project</Td>
-                            </Tr>
-                            <Tr>
-                                <Td>Science</Td>
-                                <Td>Maths</Td>
-                                <Td>Science</Td>
-                                <Td>Maths</Td>
-                            </Tr>
-                        </tbody>
-                    </Table>
-                </Wrapper>
+
+                    <Wrapper>
+                        <Table>
+                            <thead>
+                                <Tr>
+                                    <Th colSpan={6}>Time Table</Th>
+                                </Tr>
+                            </thead>
+                            <tbody>
+                                <TrMain>
+                                    <ThHours rowSpan={6}>Hours</ThHours>
+                                    <Th>mon</Th>
+                                    <Th>tues</Th>
+                                    <Th>Wed</Th>
+                                    <Th>Thrus</Th>
+                                    <Th>Fri</Th>
+                                </TrMain>
+                                <Tr>
+                                    <Td>Science</Td>
+                                    <Td>Maths</Td>
+                                    <Td>Science</Td>
+                                    <Td>Maths</Td>
+                                    <Td>Arts</Td>
+                                </Tr>
+                                <Tr>
+                                    <Td>Science</Td>
+                                    <Td>Maths</Td>
+                                    <Td>Science</Td>
+                                    <Td>Maths</Td>
+                                    <Td>Arts</Td>
+                                </Tr>
+                                <LunchRow>
+                                    <Td colSpan={5}>Lunch</Td>
+                                </LunchRow>
+                                <Tr>
+                                    <Td>Science</Td>
+                                    <Td>Maths</Td>
+                                    <Td>Science</Td>
+                                    <Td>Maths</Td>
+                                    <Td rowSpan={2}>Project</Td>
+                                </Tr>
+                                <Tr>
+                                    <Td>Science</Td>
+                                    <Td>Maths</Td>
+                                    <Td>Science</Td>
+                                    <Td>Maths</Td>
+                                </Tr>
+                            </tbody>
+                        </Table>
+                    </Wrapper>
+                </CenteredContent>
             </ContainerHtml>
         </>
     );
