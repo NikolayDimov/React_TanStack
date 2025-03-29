@@ -55,12 +55,12 @@ export const Container = styled.div`
     height: 14.125rem;
     background-color: #62374e;
     position: relative;
-     margin: 0 auto;
+    margin: 0 auto;
 `;
 
 export const Square = styled.div`
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.3rem;
+    height: 2.3rem;
     background-color: #fdc57b;
     position: absolute;
 
