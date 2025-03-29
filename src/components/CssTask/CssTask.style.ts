@@ -1,15 +1,19 @@
 import styled from 'styled-components';
-import csstest from '../assets/csstest.png';
-import '../style.css';
+import './style.css';
 import { Link } from 'react-router';
 
-const ContainerCss = styled.div`
+export const ContainerCss = styled.div`
     background-color: white;
     color: black;
     padding: 20px;
+    width: 1400px;
+    margin: 0 auto; 
+    min-height: 100vh;
+    position: relative; 
+    z-index: 2; 
 `;
 
-const BackButton = styled(Link)`
+export const BackButton = styled(Link)`
     padding: 10px 20px;
     background-color: #f1f1f1;
     color: #007bff;
@@ -34,7 +38,7 @@ const BackButton = styled(Link)`
     }
 `;
 
-const CenteredContent = styled.div`
+export const CenteredContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,22 +47,3 @@ const CenteredContent = styled.div`
     width: 100%;
     margin-bottom: 40px;
 `;
-
-
-export const CssTask = () => {
-    return (
-        <ContainerCss>
-            <BackButton to="/">Back to Home</BackButton>
-            <CenteredContent>
-                <h2>This is the CSS task. (5-10 min)</h2>
-                <p>Build the layout shown in the image below using HTML and CSS.</p>
-                <img src={csstest} width={300} />
-
-                <div className="main">
-                    <div className="square"></div>
-                </div>
-            </CenteredContent>
-
-        </ContainerCss>
-    );
-};
