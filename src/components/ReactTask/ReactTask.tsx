@@ -34,7 +34,7 @@ export const ReactTask = () => {
 
     const scrollToTop = () => {
         window.scrollTo({
-            top: 0,
+            top: 20,
             behavior: 'smooth'
         });
     };
@@ -59,7 +59,7 @@ export const ReactTask = () => {
                     <thead>
                         <Tr>
                             <Th>Title</Th>
-                            <Th>Body</Th>
+                            <Th>Content</Th>
                             <Th>Views</Th>
                         </Tr>
                     </thead>
@@ -76,7 +76,7 @@ export const ReactTask = () => {
             </TableWrapper>
 
             <PageNums>
-                Page {page + 1} / {totalPages}
+                Page {page + 1} of {totalPages}
             </PageNums>
 
             <PaginationControls>

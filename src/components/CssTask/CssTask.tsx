@@ -1,7 +1,7 @@
 import csstest from '../../assets/csstest.png';
 import BackgroundVideo from '../BackgroundVideo/BackgroundVideo';
 import { BackgroundWrapper } from '../BackgroundVideo/BackgroundVideo.style';
-import { ContainerCss, BackButton, CenteredContent } from './CssTask.style';
+import { ContainerCss, BackButton, CenteredContent, Container, Square } from './CssTask.style';
 
 export const CssTask = () => {
     return (
@@ -16,9 +16,25 @@ export const CssTask = () => {
                     <p>Build the layout shown in the image below using HTML and CSS.</p>
                     <img src={csstest} width={300} />
 
+                    <div >
+
+                    </div>
+
                     <div className="main">
                         <div className="square"></div>
                     </div>
+
+                    <div >
+
+                    </div>
+
+                    <Container>
+                        <Square className="top-left" />
+                        <Square className="top-right" />
+                        <Square className="bottom-left" />
+                        <Square className="bottom-right" />
+                    </Container>
+
                 </CenteredContent>
 
             </ContainerCss>

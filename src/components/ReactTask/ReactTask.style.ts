@@ -1,13 +1,12 @@
-import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router';
+import { ContainerProps } from './ReactTask.static';
 
 export const Title = styled.h2`
-    margin: 40px 0 20px 0;
+    margin: 2.5rem 0 1.25rem 0;
     text-align: center;
     font-size: 2rem; 
     color: #333;
-    margin-bottom: 20px;
     font-weight: 600;
 `;
 
@@ -16,29 +15,29 @@ export const TableWrapper = styled.div`
     flex-direction: column;
     align-items: center; 
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 `;
 
 export const Table = styled.table`
     width: 80%;
-    max-width: 1200px; 
+    max-width: 75rem; 
     border-collapse: collapse;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
     overflow: hidden;
 `;
 
 export const Th = styled.th`
     text-align: center;
-    border: 2px solid #ddd;
-    padding: 10px 15px;
+    border: 0.125rem solid #ddd;
+    padding: 0.625rem 0.9375rem;
     background-color: #007bff;
     color: white;
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 5px 5px 0 0;
+    letter-spacing: 0.03125rem;
+    border-radius: 0.3125rem 0.3125rem 0 0;
 
     &:hover {
         background-color: #0056b3;
@@ -57,13 +56,13 @@ export const Tr = styled.tr`
 `;
 
 export const Td = styled.td`
-    border: 2px solid #ddd;
-    padding: 5px 10px;
+    border: 0.125rem solid #ddd;
+    padding: 0.3125rem 0.625rem;
     font-size: 0.8rem; 
     color: #555;
     background-color: #f9f9f9;
     text-align: left;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 0.3125rem 0.3125rem;
 
     &:nth-child(even) {
         background-color: #f1f1f1;
@@ -77,24 +76,20 @@ export const ErrorMessage = styled.p`
 `;
 
 export const PaginationControls = styled.div`
-    margin-top: 20px;
+    margin-top: 1.25rem;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 0.625rem;
 `;
-
-export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
-    $isPlaceholderData: boolean;
-}
 
 export const Container = styled.div<ContainerProps>`
     position: relative;
     background-color: white;
     color: black;
-    padding: 20px;
-    position: relative;
+    padding: 1.25rem;
     opacity: ${props => props.$isPlaceholderData ? 0.6 : 1};
     pointer-events: ${props => props.$isPlaceholderData ? 'none' : 'auto'};
+
     & > .loader {
         position: absolute;
         top: 50%;
@@ -104,12 +99,12 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 export const Button = styled.button`
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     border: none;
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     font-size: 1rem;
     font-weight: 500;
     transition: background-color 0.3s ease;
@@ -127,27 +122,27 @@ export const Button = styled.button`
 export const PageNums = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     font-size: 1.2rem;
     color: #333;
 `;
 
 export const BackButton = styled(Link)`
-    padding: 5px 10px;
+    padding: 0.3125rem 0.625rem;
     background-color: #f1f1f1;
     color: #007bff;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
     font-weight: bold;
     transition: all 0.3s ease;
-    border: 2px solid #007bff;
+    border: 0.125rem solid #007bff;
     display: inline-block;
 
     &:hover {
         background-color: #007bff;
         color: white;
-        transform: translateY(-2px);
+        transform: translateY(-0.125rem);
     }
 
     &:active {
