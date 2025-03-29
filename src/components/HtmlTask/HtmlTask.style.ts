@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router";
+import { BackButton } from "../../utils/BackButton";
 
 export const ContainerHtml = styled.div`
     background-color: white;
@@ -10,6 +10,23 @@ export const ContainerHtml = styled.div`
     min-height: 100vh;
     position: relative;
     z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    & > ${BackButton} {
+        align-self: flex-start;
+    }
+
+    @media (max-width: 800px) {
+        width: 100%; 
+        max-width: 600px; 
+        padding: 1.25rem; 
+        margin: 0 auto;  
+        flex-direction: column-reverse;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -42,6 +59,7 @@ export const Table = styled.table`
     border: 0.125rem solid black;
     border-collapse: collapse;
     width: 20%;
+    margin-bottom: 2rem;
 `;
 
 export const Th = styled.th`

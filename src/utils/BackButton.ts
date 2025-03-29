@@ -11,8 +11,9 @@ export const BackButton = styled(Link)`
     font-weight: bold;
     transition: all 0.3s ease;
     border: 0.125rem solid #007bff;
-    margin-top: 1.875rem;
     display: inline-block;
+    position: relative;
+
 
     &:hover {
         background-color: #007bff;
@@ -23,5 +24,11 @@ export const BackButton = styled(Link)`
     &:active {
         background-color: #0056b3;
         color: white;
+    }
+
+    @media (max-width: 800px) {
+        text-align: center; 
+        display: block;
+        margin: 0 auto; 
     }
 `;

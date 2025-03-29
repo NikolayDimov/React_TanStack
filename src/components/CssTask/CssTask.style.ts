@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import "./style.css";
+import { BackButton } from "../../utils/BackButton";
 
 export const ContainerCss = styled.div`
     background-color: white;
@@ -10,15 +11,26 @@ export const ContainerCss = styled.div`
     min-height: 100vh;
     position: relative;
     z-index: 2;
-`;
 
-export const CenteredContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    width: 100%;
+
+    & > ${BackButton} {
+        align-self: flex-start;
+    }
+
+    @media (max-width: 800px) {
+        width: 100%; 
+        max-width: 600px; 
+        padding: 1.25rem; 
+        margin: 0 auto;  
+        flex-direction: column-reverse;
+    }
+`;
+
+export const CenteredContent = styled.div`
     margin-bottom: 2.5rem;
 `;
 
@@ -43,6 +55,7 @@ export const Container = styled.div`
     height: 14.125rem;
     background-color: #62374e;
     position: relative;
+     margin: 0 auto;
 `;
 
 export const Square = styled.div`

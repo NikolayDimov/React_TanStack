@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router';
 import { ContainerProps } from './ReactTask.static';
 
 export const Title = styled.h2`
@@ -19,7 +18,7 @@ export const TableWrapper = styled.div`
 `;
 
 export const Table = styled.table`
-    width: 80%;
+    width: 100%;
     max-width: 75rem; 
     border-collapse: collapse;
     box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
@@ -95,6 +94,12 @@ export const Container = styled.div<ContainerProps>`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        padding: 0.25rem; 
     }
 `;
 
