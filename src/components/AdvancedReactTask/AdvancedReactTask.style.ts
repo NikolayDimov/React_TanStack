@@ -15,6 +15,11 @@ export const TableWrapper = styled.div`
     align-items: center; 
     text-align: center;
     margin-top: 1.25rem;
+    overflow-x: auto;
+
+    @media (max-width: 800px) {
+        width: 100%;
+    }
 `;
 
 export const Table = styled.table`
@@ -24,6 +29,15 @@ export const Table = styled.table`
     box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     overflow: hidden;
+
+    @media (max-width: 800px) {
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        overflow-x: auto;
+        padding: 1rem;
+    }
 `;
 
 export const Th = styled.th`
@@ -118,7 +132,26 @@ export const Button = styled.button`
     }
 `;
 
-
 export const ButtonContainer = styled.div`
-    padding: 1rem;
+    width: 100%;
+    max-width: 75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+
+    button {
+        white-space: nowrap;
+    }
+
+    @media (max-width: 800px) {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
 `;
+

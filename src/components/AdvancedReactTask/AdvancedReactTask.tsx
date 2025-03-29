@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Loader from '../../utils/Loader';
 import { Button, ButtonContainer, Container, ErrorMessage, Table, TableWrapper, Td, Th, Title, Tr } from './AdvancedReactTask.style';
-import { PostResponse } from './AdvancedReactTask.static';
+import { Post, PostResponse } from './AdvancedReactTask.static';
 import { BackButton } from '../../utils/BackButton';
 import { advancedFetchPosts } from '../../service/advancedFetchApi';
+import useFilter from '../../utils/search';
+import SearchBar from '../../utils/searchBar';
 
 
 const AdvanceReactTask: React.FC = () => {
@@ -23,6 +25,8 @@ const AdvanceReactTask: React.FC = () => {
     }
 
     const posts = data?.posts || [];
+    const { filteredItems, setSearchQuery } = useFilter<Post>({ items: posts });
+
     const handleSortOrderToggle = () => {
         setIsSorted((prev) => !prev);
     };
@@ -31,7 +35,7 @@ const AdvanceReactTask: React.FC = () => {
         setSortBy(criterion);
     };
 
-    const sortedPosts = [...posts].sort((a, b) => {
+    const sortedAndFilteredPosts = [...filteredItems].sort((a, b) => {
         if (sortBy === 'title') {
             return isSorted
                 ? a.title.localeCompare(b.title)
@@ -48,11 +52,12 @@ const AdvanceReactTask: React.FC = () => {
         <Container $isFetching={isFetching} id='container'>
             {(isLoading || isFetching) && <Loader />}
             <BackButton to="/">Back to Home</BackButton>
-            <Title>React Task: Display Posts</Title>
+            <Title>Advanced React Task: Display Posts</Title>
             <ButtonContainer>
                 <Button onClick={() => handleSortByChange('title')}>Sort by Title</Button>
                 <Button onClick={() => handleSortByChange('views')}>Sort by Views</Button>
                 <Button onClick={handleSortOrderToggle}>Toggle Sort Order</Button>
+                <SearchBar placeholder="Search post" onSearch={setSearchQuery} />
             </ButtonContainer>
             <TableWrapper>
                 <Table>
@@ -64,7 +69,7 @@ const AdvanceReactTask: React.FC = () => {
                         </Tr>
                     </thead>
                     <tbody>
-                        {sortedPosts?.map((post) => (
+                        {sortedAndFilteredPosts?.map((post) => (
                             <Tr key={post.id}>
                                 <Td>{post.title}</Td>
                                 <Td>{post.body}</Td>
