@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Loader from '../../utils/Loader';
-import { Button, Container, ErrorMessage, Table, TableWrapper, Td, Th, Title, Tr } from './AdvancedReactTask.style';
+import { Button, ButtonContainer, Container, ErrorMessage, Table, TableWrapper, Td, Th, Title, Tr } from './AdvancedReactTask.style';
 import { PostResponse } from './AdvancedReactTask.static';
 import { BackButton } from '../../utils/BackButton';
 import { advancedFetchPosts } from '../../service/advancedFetchApi';
@@ -49,11 +49,11 @@ const AdvanceReactTask: React.FC = () => {
             {(isLoading || isFetching) && <Loader />}
             <BackButton to="/">Back to Home</BackButton>
             <Title>React Task: Display Posts</Title>
-            <div>
+            <ButtonContainer>
                 <Button onClick={() => handleSortByChange('title')}>Sort by Title</Button>
                 <Button onClick={() => handleSortByChange('views')}>Sort by Views</Button>
                 <Button onClick={handleSortOrderToggle}>Toggle Sort Order</Button>
-            </div>
+            </ButtonContainer>
             <TableWrapper>
                 <Table>
                     <thead>

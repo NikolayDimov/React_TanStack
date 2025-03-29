@@ -18,11 +18,6 @@ const ReactTask: React.FC = () => {
         retry: 2,
         // refetchInterval: 5000,
         staleTime: 5000,
-        // stale query are refetched automatically in the background when
-        // - the new instance of query is mounted
-        // - window is refocudes
-        // - network reconnected
-        // - query has option to refetch interval
     });
 
     const posts = data?.posts || [];

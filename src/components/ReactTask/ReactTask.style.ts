@@ -83,7 +83,7 @@ export const PaginationControls = styled.div`
 
 export const Container = styled.div<ContainerProps>`
     position: relative;
-    background-color: white;
+    background-color: #EEEEEE;
     color: black;
     padding: 1.25rem;
     opacity: ${props => props.$isFetching ? 0.6 : 1};

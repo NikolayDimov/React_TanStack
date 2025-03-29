@@ -76,7 +76,7 @@ export const ErrorMessage = styled.p`
 
 export const Container = styled.div<ContainerProps>`
     position: relative;
-    background-color: white;
+    background-color: #EEEEEE;
     color: black;
     padding: 1.25rem;
     opacity: ${props => props.$isFetching ? 0.6 : 1};
@@ -98,6 +98,7 @@ export const Container = styled.div<ContainerProps>`
 
 export const Button = styled.button`
     padding: 0.5rem 1rem;
+    margin-right: 1rem;
     border: none;
     background-color: #007bff;
     color: white;
@@ -117,3 +118,7 @@ export const Button = styled.button`
     }
 `;
 
+
+export const ButtonContainer = styled.div`
+    padding: 1rem;
+`;
