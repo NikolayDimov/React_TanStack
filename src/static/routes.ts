@@ -1,7 +1,7 @@
 export const routes = {
     home: "/",
     htmlTaks: "htmltask",
-    cssTask: "csstaks",
+    cssTask: "csstask",
     reactTask: "reacttask",
     advancedReactTask: "advancedreacttask",
     notFound: "/*",
