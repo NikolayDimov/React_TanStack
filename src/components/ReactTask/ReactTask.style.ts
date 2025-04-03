@@ -24,6 +24,7 @@ export const TableWrapper = styled.div`
     align-items: center; 
     text-align: center;
     margin-top: 1.25rem;
+    overflow-x: auto;
 `;
 
 export const Table = styled.table`
@@ -46,9 +47,34 @@ export const Th = styled.th`
     text-transform: uppercase;
     letter-spacing: 0.03125rem;
     border-radius: 0.3125rem 0.3125rem 0 0;
+    min-width: 100px; 
 
     &:hover {
         background-color: #0056b3;
+    }
+`;
+
+export const ThTitle = styled(Th)`
+    width: 15%;
+        @media (max-width: 800px) {
+        width: 10%;
+        min-width: 50px; 
+    }
+`;
+
+export const ThContent = styled(Th)`
+    width: 75%;
+            @media (max-width: 800px) {
+        width: 85%;
+    }
+`;
+
+export const ThViews = styled(Th)`
+    width: 10%;
+        @media (max-width: 800px) {
+        width: 5%;
+        min-width: 20px; 
+
     }
 `;
 

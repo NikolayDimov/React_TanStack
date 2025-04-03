@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import Loader from '../../utils/Loader';
-import { Button, Container, ErrorMessage, PageNums, PaginationControls, Table, TableWrapper, Td, Th, Title, Tr } from './ReactTask.style';
+import { Button, Container, ErrorMessage, PageNums, PaginationControls, Table, TableWrapper, Td, Th, ThContent, ThTitle, ThViews, Title, Tr } from './ReactTask.style';
 import { PostResponse } from './ReactTask.static';
 import { fetchPosts } from '../../service/fetchApi';
 import { BackButton } from '../../utils/BackButton';
@@ -54,9 +54,9 @@ const ReactTask: React.FC = () => {
                 <Table>
                     <thead>
                         <Tr>
-                            <Th>Title</Th>
-                            <Th>Content</Th>
-                            <Th>Views</Th>
+                            <ThTitle>Title</ThTitle>
+                            <ThContent>Content</ThContent>
+                            <ThViews>Views</ThViews>
                         </Tr>
                     </thead>
                     <tbody>
