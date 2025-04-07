@@ -76,6 +76,6 @@ This project is licensed under the MIT License.
 
 
 ## Screenshot
-![Homepage](public/screenshot.png)
-![Task](public/Screenshot_react_task.png)
+![Homepage](public/homePage.png)
+![Task](public/advancedReact.png)
 
